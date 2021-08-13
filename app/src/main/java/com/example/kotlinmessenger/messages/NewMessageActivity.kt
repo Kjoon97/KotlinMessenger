@@ -1,10 +1,12 @@
 package com.example.kotlinmessenger
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlinmessenger.models.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -15,6 +17,7 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_new_message.*
 import kotlinx.android.synthetic.main.activity_register.view.*
+import kotlinx.android.synthetic.main.user_row_new_message.*
 import kotlinx.android.synthetic.main.user_row_new_message.view.*
 
 class NewMessageActivity : AppCompatActivity() {
@@ -34,7 +37,10 @@ class NewMessageActivity : AppCompatActivity() {
         fetchUsers()
     }
 
-    private fun fetchUsers(){
+    companion object{
+       val USER_KEY = "USER_KEY"
+    }
+    private fun fetchUsers(){  //파베로부터 유저 데이터 가져옴
         val ref = FirebaseDatabase.getInstance().getReference("/users")
         ref.addListenerForSingleValueEvent(object :ValueEventListener{
 
@@ -50,6 +56,17 @@ class NewMessageActivity : AppCompatActivity() {
                     }
                 }
 
+                adapter.setOnItemClickListener { item, view ->  // 사용자 목록 중 한명 눌렀을 때
+
+                    val userItem = item as UserItem
+                    val intent= Intent(view.context, ChatLogActivity::class.java)
+//                    intent.putExtra(USER_KEY, item.user.username)
+                    intent.putExtra(USER_KEY,userItem.user)
+                    startActivity(intent)
+
+                    finish()
+
+                }
                 recyclerview_newmessage.adapter =adapter
             }
             override fun onCancelled(error: DatabaseError) {

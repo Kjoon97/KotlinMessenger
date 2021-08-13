@@ -6,10 +6,14 @@
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/drawable/rounded_button.xml" value="0.16296296296296298" />
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/drawable/rounded_edittext_register_login.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/drawable/rounded_select_photo_button.xml" value="0.16296296296296298" />
+        <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_chat_log.xml" value="0.19972826086956522" />
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_latest_messages.xml" value="0.19384057971014493" />
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_login.xml" value="0.10185185185185185" />
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_main.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_new_message.xml" value="0.19384057971014493" />
+        <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_register.xml" value="0.2028985507246377" />
+        <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/chat_from_row.xml" value="0.4" />
+        <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/chat_to_row.xml" value="0.264" />
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/user_row_new_message.xml" value="0.264" />
         <entry key="..\:/Users/jh833/AndroidStudioProjects/KotlinMessenger/app/src/main/res/menu/nav_menu.xml" value="0.2203125" />
       </map>
