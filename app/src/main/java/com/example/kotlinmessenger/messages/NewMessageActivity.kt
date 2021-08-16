@@ -27,12 +27,12 @@ class NewMessageActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Select User"
 //
-//        val adapter = GroupAdapter<ViewHolder>()
+//      val adapter = GroupAdapter<ViewHolder>()
 //        adapter.add(UserItem())
 //        adapter.add(UserItem())
 //        adapter.add(UserItem())
 //
-//        recyclerview_newmessage.adapter = adapter
+//      recyclerview_newmessage.adapter = adapter
 
         fetchUsers()
     }
