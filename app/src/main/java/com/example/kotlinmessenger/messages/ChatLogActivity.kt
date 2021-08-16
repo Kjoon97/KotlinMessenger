@@ -89,10 +89,10 @@ class ChatLogActivity : AppCompatActivity() {
         val fromId = FirebaseAuth.getInstance().uid// 나
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
         val toId = user?.uid //상대방
+        if(fromId == null) return
+
         val reference = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId").push()
         val toReference = FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
-
-        if(fromId == null) return
 
         val chatMessage = ChatMessage(reference.key!!, text, fromId, toId!!,System.currentTimeMillis()/1000 )
         reference.setValue(chatMessage)
@@ -102,6 +102,12 @@ class ChatLogActivity : AppCompatActivity() {
                 recyclerview_chat_log.scrollToPosition(adapter.itemCount-1)
             }
         toReference.setValue(chatMessage)
+
+        val latestMessageFromRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        latestMessageFromRef.setValue(chatMessage)
+
+        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        latestMessageToRef.setValue(chatMessage)
     }
 
 }
